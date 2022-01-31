@@ -2,15 +2,15 @@ export const API_KEY = "cc1f78b6700d413b0a8c908e50c48e48";
 export const BASE_PATH = "https://api.themoviedb.org/3";
 
 interface IMovie {
-    id:number;
-    backdrop_path: string;
-    poster_path: string;
-    title: string;
-    overview: string;
+  id: number;
+  backdrop_path: string;
+  poster_path: string;
+  title: string;
+  overview: string;
 }
 
 interface ITv {
-  id:number;
+  id: number;
   backdrop_path: string;
   poster_path: string;
   name: string;
@@ -29,7 +29,7 @@ export interface IGetLatestMoviesResult {
   poster_path: string;
   title: string;
   id: number;
-  overview:""
+  overview: "";
 }
 
 export interface IGetTvResult {
@@ -44,7 +44,7 @@ export interface IGetLatestTvResult {
   poster_path: string;
   name: string;
   id: number;
-  overview:""
+  overview: "";
 }
 
 export function getNowPlayingMovies() {
@@ -52,8 +52,6 @@ export function getNowPlayingMovies() {
     (response) => response.json()
   );
 }
-
-
 
 export function getLatestMovies() {
   return fetch(`${BASE_PATH}/movie/latest?api_key=${API_KEY}`).then(
@@ -74,8 +72,8 @@ export function getUpComingMovies() {
 }
 
 export function getLatestTv() {
-  return fetch(`${BASE_PATH}/tv/latest?api_key=${API_KEY}`).then(
-    (response) => response.json()
+  return fetch(`${BASE_PATH}/tv/latest?api_key=${API_KEY}`).then((response) =>
+    response.json()
   );
 }
 
@@ -86,8 +84,8 @@ export function getAiringTv() {
 }
 
 export function getPopularTv() {
-  return fetch(`${BASE_PATH}/tv/popular?api_key=${API_KEY}`).then(
-    (response) => response.json()
+  return fetch(`${BASE_PATH}/tv/popular?api_key=${API_KEY}`).then((response) =>
+    response.json()
   );
 }
 
